@@ -1,0 +1,26 @@
+"use client"
+import { Button } from "./ui/button";
+import { motion } from "framer-motion";
+
+export default function Navbar() {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="flex items-center justify-center gap-48 py-10"
+    >
+      <div className="text-white">logo</div>
+      <div className="flex justify-between items-center gap-12 text-white">
+        <p>Home</p>
+        <p>About Us</p>
+        <p>Courses</p>
+        <p>Contact</p>
+      </div>
+      <div className="flex justify-between items-center gap-4 ">
+        <p className="text-white">Log In</p>
+        <Button className="rounded-full">Join Us for free</Button>
+      </div>
+    </motion.div>
+  );
+}
