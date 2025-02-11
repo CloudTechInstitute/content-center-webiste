@@ -10,20 +10,18 @@ import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import { Card, CardContent } from "./ui/card";
 import sideimg from "@/components/assets/exams.jpg";
+import nurse from "@/components/assets/nurse.jpg";
 
 export default function Services() {
   return (
     <div className="text-center">
       <p className="text-3xl text-lime-400 mb-4">
-        FREE Next Generation NCLEX Live Online Review
+        Comprehensive learning programs <br />
+        for all students
       </p>
       <p className="text-white mb-4">
-        Don’t pay extra for webinars or 3-day review sessions! Get NCLEX-ready
-        with our FREE live and on-demand content presented by top nursing
-        experts. New content drops multiple times each week, plus you can
-        binge-watch all our recordings on YouTube whenever you need a refresher.
-        Follow us @UWorldNursing for the latest updates and never miss a
-        session!
+        Become lifelong learners with the best teachers, engaging video lessons
+        and personalised learning journeys
       </p>
 
       <Carousel
@@ -66,22 +64,22 @@ export default function Services() {
             tested content to help you pass the exam the first time.
           </p>
         </div>
-        <div>
+        <div className="relative w-[1200px] h-56 overflow-hidden">
           <Image
             src={sideimg}
             alt="sideimg"
-            width={2020}
-            className="rounded-lg"
+            fill
+            className="rounded-lg object-cover"
           />
         </div>
       </div>
       <div className="flex justify-center mt-12 w-full text-white gap-6 items-center max-w-4xl mx-auto">
-        <div>
+        <div className="relative w-[1200px] h-56 overflow-hidden">
           <Image
-            src={sideimg}
+            src={nurse}
             alt="sideimg"
-            width={2020}
-            className="rounded-lg"
+            fill
+            className="rounded-lg object-cover"
           />
         </div>
         <div className="text-left">

@@ -52,13 +52,13 @@ export default function Hero() {
                 <PiSmileyFill className="text-[#A6E729]" size={40} />
               </div>
               <div>
-                <p className="text-2xl">600 </p>
+                <p className="text-2xl">Over 600 </p>
                 <p className="">Happy students</p>
               </div>
             </div>
             <div className="mb-3">
               <p>
-                "Master your NCLEX-RN prep with UWorld’s practice tests and
+                "Master your NCLEX-RN prep with Global NCLEX practice tests and
                 exams. Get ready with realistic NCLEX-RN practice questions and
                 in-depth answer explanations."
               </p>
@@ -70,8 +70,8 @@ export default function Hero() {
             <div className="flex gap-2 items-center">
               <div className="w-10 h-10 rounded-full bg-slate-800"></div>
               <div>
-                <p className="text-xs">Emmanuel</p>
-                <p className="text-xs">Abobila</p>
+                <p className="text-xs">Global NCLEX</p>
+                <p className="text-xs">Exam Center</p>
               </div>
             </div>
           </motion.div>
@@ -91,7 +91,10 @@ export default function Hero() {
             className="w-[30%] text-right"
           >
             <p className="text-xl">5 star rating</p>
-            <p className="text-sm">Average rating 4.8 makes you world best</p>
+            <p className="text-sm">
+              Average rating 4.8 makes us <br />
+              one of the most competitive in the world
+            </p>
             <div className="flex gap-2 justify-end items-center mb-20">
               {items.map((_, index) => (
                 <div key={index}>
@@ -99,14 +102,15 @@ export default function Hero() {
                 </div>
               ))}
             </div>
-            <div className="text-3xl">2.5M+</div>
+            <div className="text-3xl">50K+</div>
             <div className="text-sm mb-6">total active students</div>
             <div className="text-3xl">137</div>
             <div className="text-sm">total courses</div>
           </motion.div>
         </div>
         <div className="text-white text-2xl text-center mt-7">
-          Pass the Next Generation <span className="text-lime-400">NCLEX-RN</span> the First Time
+          Pass the Next Generation{" "}
+          <span className="text-lime-400">NCLEX-RN</span> the First Time
         </div>
       </div>
     </div>

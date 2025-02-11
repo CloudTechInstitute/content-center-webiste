@@ -2,35 +2,84 @@
 import aboutImg from "@/components/assets/exams.jpg";
 import Image from "next/image";
 import { Button } from "./ui/button";
+import { BsFillQuestionOctagonFill } from "react-icons/bs";
+import { BiSolidAnalyse } from "react-icons/bi";
+import { MdVideoLibrary } from "react-icons/md";
+import { PiExamFill } from "react-icons/pi";
 
 export default function About() {
   return (
-    <div className="relative flex flex-col justify-center max-w-4xl overflow-hidden w-full mb-16">
+    <div className="relative flex flex-col justify-center max-w-6xl overflow-hidden w-full mb-16">
       <div className="absolute inset-0 bg-[url(/img/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
 
       <div className="mx-auto flex w-full items-center justify-center">
         <div className="relative z-10 flex w-full cursor-pointer items-center overflow-hidden rounded-xl border border-slate-800 p-[1.5px]">
           <div className="animate-rotate absolute inset-0 h-full w-full rounded-full bg-[conic-gradient(#A7E629_20deg,transparent_120deg)]"></div>
           <div className="relative z-20 flex gap-4 w-full items-center rounded-[0.60rem] bg-slate-900 p-2">
-            <div className="">
-              <Image
-                src={aboutImg}
-                alt="side"
-                width={1050}
-                className="rounded-lg"
-              />
-            </div>
-            <div>
-              <p className="relative z-50 block rounded-lg mb-3 text-sm text-white transition duration-200">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-              <Button className="rounded-full">Read more</Button>
+            <div className="flex-col text-white p-4">
+              <div className="flex mb-10 gap-6">
+                <div className="w-full flex items-center justify-center gap-6">
+                  <div className="">
+                    <BsFillQuestionOctagonFill className="" size={48} />
+                  </div>
+                  <div>
+                    <p className="text-semibold text-xl text-lime-400">
+                      Top Quality Questions
+                    </p>
+                    <p className="relative z-50 block rounded-lg mb-3 text-sm transition duration-200">
+                      All questions and solutions, designed by top exam experts,
+                      based on latest patterns and actual exam level
+                    </p>
+                  </div>
+                </div>
+                <div className="w-full flex items-center justify-center gap-6">
+                  <div className="">
+                    <PiExamFill className="" size={48} />
+                  </div>
+                  <div>
+                    <p className="text-semibold text-xl text-lime-400">
+                      Live Quizzes
+                    </p>
+                    <p className="relative z-50 block rounded-lg mb-3 text-sm transition duration-200">
+                      Get your All-India Rank and feel the thrill of a
+                      real-exam. Groom your pressure handling and time
+                      management skills.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className=" flex gap-6">
+                <div className="w-full flex items-center justify-center gap-6">
+                  <div className="">
+                    <BiSolidAnalyse className="" size={48} />
+                  </div>
+                  <div>
+                    <p className="text-semibold text-xl text-lime-400">
+                      Detailed Analysis
+                    </p>
+                    <p className="relative z-50 block rounded-lg mb-3 text-sm transition duration-200">
+                      Know your weaknesses, strengths and everything else that
+                      you need to know to improve your score and rank.
+                    </p>
+                  </div>
+                </div>
+                <div className="w-full flex items-center justify-center gap-6">
+                  <div className="">
+                    <MdVideoLibrary className="" size={48} />
+                  </div>
+                  <div>
+                    <p className="text-semibold text-xl text-lime-400">
+                      Learning Videos
+                    </p>
+                    <p className="relative z-50 block rounded-lg mb-3 text-sm transition duration-200">
+                      Become lifelong learners with best teachers, engaging
+                      video lessons and personalised learning journeys
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* <Button className="rounded-full">Read more</Button> */}
             </div>
           </div>
         </div>
