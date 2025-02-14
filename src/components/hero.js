@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
-import { Button } from "./ui/button";
 import { PiSmileyFill, PiStar } from "react-icons/pi";
 import { HiArrowTrendingUp } from "react-icons/hi2";
 import hero from "@/components/assets/hero-img.png";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Hero() {
   const items = Array.from({ length: 5 }, (_, index) => index + 1);
@@ -18,6 +18,8 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
           className="text-white text-6xl text-center font-bold mb-3"
         >
+          <span className="text-lg font-light">Global NCLEX Exams Center</span>
+          <br></br>
           Your #1 Choice for
           <span className="text-lime-400 ml-2">
             Next <br />
@@ -29,16 +31,36 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="flex justify-center items-center gap-12 p-5"
+          className="flex justify-center items-center gap-12 p-4"
         >
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="rounded-full p-3 w-48 bg-lime-400"
+          <Link
+            href={"#pricing"}
+            onClick={(e) => {
+              e.preventDefault();
+              document
+                .getElementById("pricing")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
           >
-            Get Started
-          </motion.button>
-          <p className="underline text-white">Contact Us</p>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="rounded-full p-3 w-48 bg-lime-400"
+            >
+              Get Started
+            </motion.button>
+          </Link>
+          <Link
+            href={"#contact-us"}
+            onClick={(e) => {
+              e.preventDefault();
+              document
+                .getElementById("contact-us")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            <p className="underline text-white">Contact Us</p>
+          </Link>
         </motion.div>
         <div className="flex justify-between items-start text-white w-full">
           <motion.div
@@ -53,11 +75,11 @@ export default function Hero() {
               </div>
               <div>
                 <p className="text-2xl">Over 600 </p>
-                <p className="">Happy students</p>
+                <p className="font-light">Happy students</p>
               </div>
             </div>
             <div className="mb-3">
-              <p>
+              <p className="font-light">
                 "Master your NCLEX-RN prep with Global NCLEX practice tests and
                 exams. Get ready with realistic NCLEX-RN practice questions and
                 in-depth answer explanations."
@@ -91,7 +113,7 @@ export default function Hero() {
             className="w-[30%] text-right"
           >
             <p className="text-xl">5 star rating</p>
-            <p className="text-sm">
+            <p className="text-sm font-light">
               Average rating 4.8 makes us <br />
               one of the most competitive in the world
             </p>

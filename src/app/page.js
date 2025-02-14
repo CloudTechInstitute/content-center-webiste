@@ -8,14 +8,14 @@ import FooterSection from "@/components/footer";
 
 export default function Home() {
   return (
-    <div className="flex flex-col w-full justify-center items-center max-w-5xl mx-auto">
-      <Navbar />
+    <div className="flex flex-col w-full justify-center items-center max-w-5xl mx-auto text-lg">
+      {/* <Navbar /> */}
       <Hero />
       <About />
       <Services />
       <Faq />
       <PricingSection />
-      <FooterSection/>
+      <FooterSection />
     </div>
   );
 }

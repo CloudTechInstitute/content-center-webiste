@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono, Nunito } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Content-Center",
+  title: "Global NCLEX-RN",
   description: "Developed by SPRING MEDIA GROUPE",
 };
 
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-900`}
       >
+        <Navbar />
         {children}
       </body>
     </html>

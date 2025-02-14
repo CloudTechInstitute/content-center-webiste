@@ -3,8 +3,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
@@ -57,7 +55,7 @@ export default function Services() {
             High-Yield <span className="text-lime-400">NCLEX</span> Videos
           </p>
           <hr className="mb-4"></hr>
-          <p>
+          <p className="font-light">
             Transform your NCLEX study plan with our engaging, bite-sized review
             videos, designed to ensure you're NCLEX-ready in no time. Our
             dynamic video series focuses on the most important and frequently
@@ -87,7 +85,7 @@ export default function Services() {
             Adaptive <span className="text-lime-400">NCLEX</span> Practice Tests
           </p>
           <hr className="mb-4"></hr>
-          <p>
+          <p className="font-light">
             Develop your test-taking skills with our Adaptive (CAT) NCLEX
             practice tests. Our adaptive practice tests determine your level of
             preparedness so you’ll know if your performance is “on track” or
