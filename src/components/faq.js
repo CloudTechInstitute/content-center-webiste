@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/accordion";
 export default function Service() {
   return (
-    <div className="text-left w-full bg-lime-600 p-5 rounded-lg mt-5 mb-5 text-gray-900">
+    <div className="text-left w-full bg-lime-600 p-5 rounded-lg mt-5 mb-10 text-gray-900">
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
           <AccordionTrigger className="text-xl">

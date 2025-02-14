@@ -9,6 +9,20 @@ import Image from "next/image";
 import { Card, CardContent } from "./ui/card";
 import sideimg from "@/components/assets/exams.jpg";
 import nurse from "@/components/assets/nurse.jpg";
+import carousel1 from "@/components/assets/1.jpg";
+import carousel2 from "@/components/assets/2.jpg";
+import carousel3 from "@/components/assets/3.jpg";
+import carousel4 from "@/components/assets/4.jpg";
+
+const images = [
+  carousel1,
+  carousel2,
+  carousel3,
+  carousel4,
+  // "assets/image3.jpg",
+  // "assets/image4.jpg",
+  // "assets/image5.jpg",
+];
 
 export default function Services() {
   return (
@@ -31,15 +45,21 @@ export default function Services() {
         ]}
       >
         <CarouselContent className="-ml-1">
-          {Array.from({ length: 5 }).map((_, index) => (
+          {images.map((src, index) => (
             <CarouselItem
               key={index}
-              className="pl-1 md:basis-1/2 lg:basis-1/3"
+              className=" pl-1 md:basis-1/2 lg:basis-1/2"
             >
               <div className="p-1">
                 <Card>
-                  <CardContent className="flex aspect-square items-center justify-center p-6">
-                    <span className="text-2xl font-semibold">{index + 1}</span>
+                  <CardContent className="flex aspect-square items-center justify-center p-1">
+                    <Image
+                      src={src}
+                      alt={`Slide ${index + 1}`}
+                      width={300}
+                      height={300}
+                      className="w-full h-full object-cover rounded-lg"
+                    />
                   </CardContent>
                 </Card>
               </div>
@@ -47,7 +67,7 @@ export default function Services() {
           ))}
         </CarouselContent>
         {/* <CarouselPrevious />
-        <CarouselNext /> */}
+      <CarouselNext /> */}
       </Carousel>
       <div className="flex justify-center mt-12 w-full text-white gap-6 items-center max-w-4xl mx-auto">
         <div className="text-left">
@@ -66,19 +86,13 @@ export default function Services() {
           <Image
             src={sideimg}
             alt="sideimg"
-            fill
             className="rounded-lg object-cover"
           />
         </div>
       </div>
       <div className="flex justify-center mt-12 w-full text-white gap-6 items-center max-w-4xl mx-auto">
-        <div className="relative w-[1200px] h-56 overflow-hidden">
-          <Image
-            src={nurse}
-            alt="sideimg"
-            fill
-            className="rounded-lg object-cover"
-          />
+        <div className="relative w-[2000px] h-56 overflow-hidden">
+          <Image src={nurse} alt="nurse" className="rounded-lg object-cover" />
         </div>
         <div className="text-left">
           <p className="text-2xl font-semibold mb-4">

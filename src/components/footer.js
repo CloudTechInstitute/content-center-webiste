@@ -6,6 +6,29 @@ import { GiRotaryPhone } from "react-icons/gi";
 import { MdEmail } from "react-icons/md";
 
 export default function FooterSection() {
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "a405b133-39a1-4efc-aeb0-2789446fdf11");
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    });
+    const result = await response.json();
+    if (result.success) {
+      form.reset();
+    }
+  }
   return (
     <>
       <div
@@ -22,11 +45,12 @@ export default function FooterSection() {
               products? Reach out to us.
             </p>
             <div className="flex w-full gap-12 items-start justify-center">
-              <form action="#" className="space-y-2 w-full">
+              <form onSubmit={handleSubmit} className="space-y-2 w-full">
                 <div>
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     className="block p-2.5 w-full text-sm rounded-lg bg-transparent  border border-gray-300 shadow-sm text-white focus:ring-lime-400 focus:border-lime-400"
                     placeholder="valid email address"
                     required
@@ -36,6 +60,7 @@ export default function FooterSection() {
                   <input
                     type="text"
                     id="subject"
+                    name="heading"
                     className="block p-2.5 w-full text-sm rounded-lg bg-transparent  border border-gray-300 shadow-sm text-white focus:ring-lime-400 focus:border-lime-400"
                     placeholder="message heading"
                     required
@@ -45,6 +70,7 @@ export default function FooterSection() {
                   <textarea
                     id="message"
                     rows="6"
+                    name="message"
                     className="block p-2.5 w-full text-sm rounded-lg bg-transparent  border border-gray-300 shadow-sm text-white focus:ring-lime-400 focus:border-lime-400"
                     placeholder="Let us know how we can help you"
                   ></textarea>
@@ -96,16 +122,13 @@ export default function FooterSection() {
                 </h2>
                 <ul className="text-gray-500 dark:text-gray-400 font-medium">
                   <li className="mb-4">
-                    <a href="https://flowbite.com/" className="hover:underline">
-                      Flowbite
+                    <a href="#courses" className="hover:underline">
+                      Courses
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="https://tailwindcss.com/"
-                      className="hover:underline"
-                    >
-                      Tailwind CSS
+                    <a href="#" className="hover:underline">
+                      Home
                     </a>
                   </li>
                 </ul>
@@ -117,18 +140,15 @@ export default function FooterSection() {
                 <ul className="text-gray-500 dark:text-gray-400 font-medium">
                   <li className="mb-4">
                     <a
-                      href="https://github.com/themesberg/flowbite"
+                      href="https://x.com/RnNclexglobal"
                       className="hover:underline "
                     >
-                      Github
+                      X (Twitter)
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="https://discord.gg/4eeurUVvTy"
-                      className="hover:underline"
-                    >
-                      Discord
+                    <a href="#" className="hover:underline">
+                      Facebook
                     </a>
                   </li>
                 </ul>
@@ -162,7 +182,7 @@ export default function FooterSection() {
               Powered by: Spring Media Groupe
             </span>
             <div className="flex mt-4 sm:justify-center sm:mt-0">
-              <a
+              {/* <a
                 href="#"
                 className="text-lime-400 hover:text-lime-800 dark:hover:text-white"
               >
@@ -191,9 +211,9 @@ export default function FooterSection() {
                   <path d="M16.942 1.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.585 11.585 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3A17.392 17.392 0 0 0 .182 13.218a15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.63 10.63 0 0 1-1.706-.83c.143-.106.283-.217.418-.33a11.664 11.664 0 0 0 10.118 0c.137.113.277.224.418.33-.544.328-1.116.606-1.71.832a12.52 12.52 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM6.678 10.813a1.941 1.941 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z" />
                 </svg>
                 <span className="sr-only">Discord community</span>
-              </a>
+              </a> */}
               <a
-                href="#"
+                href="https://x.com/RnNclexglobal"
                 className="text-lime-400 hover:text-lime-800 dark:hover:text-white ms-5"
               >
                 <svg
@@ -207,7 +227,7 @@ export default function FooterSection() {
                 </svg>
                 <span className="sr-only">Twitter page</span>
               </a>
-              <a
+              {/* <a
                 href="#"
                 className="text-lime-400 hover:text-lime-800 dark:hover:text-white ms-5"
               >
@@ -236,7 +256,7 @@ export default function FooterSection() {
                   <path d="M10 0a10 10 0 1 0 10 10A10.009 10.009 0 0 0 10 0Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.094 20.094 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM8 1.707a8.821 8.821 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.758 45.758 0 0 0 8 1.707ZM1.642 8.262a8.57 8.57 0 0 1 4.73-5.981A53.998 53.998 0 0 1 9.54 7.222a32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.64 31.64 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM10 18.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 13.113 11a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z" />
                 </svg>
                 <span className="sr-only">Dribbble account</span>
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

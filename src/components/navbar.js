@@ -15,7 +15,7 @@ export default function Navbar() {
       <div className="text-white">logo</div>
       <div className="flex justify-between items-center gap-12 text-white">
         <p>Home</p>
-        <p>About Us</p>
+        {/* <p>About Us</p> */}
         <p>Courses</p>
         <p>Contact</p>
       </div>
