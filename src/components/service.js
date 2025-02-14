@@ -29,29 +29,24 @@ const images = [
 
 export default function Services() {
   return (
-    <div className="text-center">
-      <p className="text-3xl text-lime-400 mb-4">
-        Comprehensive learning programs <br />
+    <div className="text-center px-4 md:px-10">
+      {/* Header Text */}
+      <p className="text-2xl md:text-3xl text-lime-400 mb-4">
+        Comprehensive learning programs <br className="hidden md:block" />
         for all students
       </p>
-      <p className="text-white mb-4">
-        Become lifelong learners with the best teachers, engaging video lessons
-        and personalised learning journeys
+      <p className="text-white mb-4 text-sm md:text-lg">
+        Become lifelong learners with the best teachers, engaging video lessons,
+        and personalized learning journeys.
       </p>
 
-      <Carousel
-        className="w-full"
-        plugins={[
-          Autoplay({
-            delay: 2000,
-          }),
-        ]}
-      >
+      {/* Carousel Section */}
+      <Carousel className="w-full" plugins={[Autoplay({ delay: 2000 })]}>
         <CarouselContent className="-ml-1">
           {images.map((src, index) => (
             <CarouselItem
               key={index}
-              className=" pl-1 md:basis-1/2 lg:basis-1/2"
+              className="pl-1 md:basis-1/2 lg:basis-1/3"
             >
               <div className="p-1">
                 <Card>
@@ -69,18 +64,18 @@ export default function Services() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        {/* <CarouselPrevious />
-      <CarouselNext /> */}
       </Carousel>
-      <div className="flex justify-center mt-12 w-full text-white gap-6 items-center max-w-4xl mx-auto">
+
+      {/* Course Info Section */}
+      <div className="flex flex-col md:flex-row justify-center mt-12 w-full text-white gap-6 items-center max-w-4xl mx-auto">
         <div className="text-left w-full">
-          <p className="text-2xl font-semibold mb-4 text-lime-400">
+          <p className="text-xl md:text-2xl font-semibold mb-4 text-lime-400">
             Who is this course for?
           </p>
           <hr className="mb-4"></hr>
-          <p className="font-light mb-3">
+          <p className="font-light mb-3 text-sm md:text-base">
             This course is for registered nurses located in Africa who are
-            preparing for their NCLEX-RN exams
+            preparing for their NCLEX-RN exams.
           </p>
           <Link
             href="http://pearsonvue.com"
@@ -90,35 +85,35 @@ export default function Services() {
             <Button>Read more...</Button>
           </Link>
         </div>
-        <div className="relative w-[800px] h-56 overflow-hidden">
+        <div className="relative w-full md:w-[600px] lg:w-[800px] h-56 overflow-hidden">
           <Image
             src={sideimg}
             alt="sideimg"
             className="rounded-lg object-cover"
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
       </div>
-      <div className="flex justify-center mt-12 w-full text-white gap-6 items-center max-w-4xl mx-auto">
-        <div className="relative w-[1200px] h-56 overflow-hidden">
+
+      {/* How to Apply Section */}
+      <div className="flex flex-col md:flex-row justify-center mt-12 w-full text-white gap-6 items-center max-w-4xl mx-auto">
+        <div className="relative w-full md:w-[600px] lg:w-[800px] h-56 overflow-hidden">
           <Image
             src={nurse}
             alt="nurse"
             fill
             className="rounded-lg object-cover"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
         <div className="text-left">
-          <p className="text-2xl font-semibold mb-4">
+          <p className="text-xl md:text-2xl font-semibold mb-4">
             How to apply for NCLEX as a registered nurse in Africa
           </p>
           <hr className="mb-4"></hr>
-          <p className="font-light mb-3">
+          <p className="font-light mb-3 text-sm md:text-base">
             NCLEX (National Council Licensure Examination) is a licensure
             examination administered by the National Council of State Boards of
-            Nursing (NCSBN) for licensing nurses in the US, Canada and recently
+            Nursing (NCSBN) for licensing nurses in the US, Canada, and recently
             in Australia.
           </p>
           <Link
@@ -130,54 +125,56 @@ export default function Services() {
           </Link>
         </div>
       </div>
+
+      {/* Our Courses Section */}
       <div
         className="flex items-center justify-center mt-24 max-w-3xl mx-auto"
         id="courses"
       >
-        <div className="text-center text-lime-400 text-3xl uppercase w-full mb-3">
-          our courses
+        <div className="text-center text-lime-400 text-2xl md:text-3xl uppercase w-full mb-3">
+          Our Courses
         </div>
       </div>
-      <div className="text-white mb-10">
+      <div className="text-white mb-10 text-sm md:text-lg">
         Written by nurse educators and practicing nurses, our NCLEX-RN practice
-        questions, which include over 2,700 questions, are designed to challenge
-        you and build your clinical judgment skills. Every question includes a
-        detailed rationale for the correct and incorrect answers so you will
-        understand the “why” behind the question.
+        questions include over 2,700 questions designed to challenge you and
+        build your clinical judgment skills.
       </div>
-      <div className="flex justify-center gap-10">
-        <div className="max-w-sm rounded-lg overflow-hidden shadow-lg border border-lime-400 p-2">
+
+      {/* Course Cards */}
+      <div className="md:flex justify-center gap-10 ">
+        <div className="mb-5 lg:mb-0 rounded-lg overflow-hidden shadow-lg border border-lime-400 p-2">
           <Image className="w-full" src={adult} alt="smiling nurses" />
           <div className="px-6 py-4">
-            <div className="font-semibold text-xl mb-2 text-lime-400">
+            <div className="font-semibold text-lg md:text-xl mb-2 text-lime-400">
               NCLEX Exams Preparation
             </div>
-            <p className="text-white text-base font-light">
+            <p className="text-white text-sm md:text-base font-light">
               Our personalized study tools help you zero in on what matters and
-              build a study strategy that works for you. Track your progress and
-              stay motivated with performance metrics, so you can approach the
-              NCLEX-RN with confidence and focus.
+              build a study strategy that works for you.
             </p>
           </div>
         </div>
-        <div className="max-w-sm rounded-lg overflow-hidden shadow-lg border border-lime-400 p-2">
+
+        <div className="rounded-lg overflow-hidden shadow-lg border border-lime-400 p-2">
           <Image className="w-full" src={nurse} alt="smiling nurses" />
           <div className="px-6 py-4">
-            <div className="font-semibold text-xl mb-2 text-lime-400">
+            <div className="font-semibold text-lg md:text-xl mb-2 text-lime-400">
               Mental Health Problems of Adults Clients
             </div>
-            <p className="text-white text-base font-light">
-              {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Voluptatibus quia, nulla! Maiores et perferendis eaque,
-              exercitationem praesentium nihil. */}
+            <p className="text-white text-sm md:text-base font-light">
+              Gain insights into common mental health issues affecting adult
+              clients and learn best practices for treatment.
             </p>
           </div>
         </div>
       </div>
+
+      {/* FAQ Section */}
       <div className="flex items-center justify-center mt-24 max-w-3xl mx-auto">
         <div className="h-0.5 w-[30%] bg-lime-400 rounded-full "></div>
-        <div className="text-center text-white text-2xl uppercase w-full">
-          frequently asked questions
+        <div className="text-center text-white text-lg md:text-2xl uppercase w-full">
+          Frequently Asked Questions
         </div>
         <div className="h-0.5 w-[30%] bg-lime-400 rounded-full "></div>
       </div>

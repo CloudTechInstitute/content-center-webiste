@@ -6,7 +6,7 @@ import { PiExamFill } from "react-icons/pi";
 
 export default function About() {
   return (
-    <div className="relative flex flex-col justify-center max-w-6xl overflow-hidden w-full mb-16">
+    <div className="relative flex flex-col justify-center max-w-6xl overflow-hidden w-full mb-16 px-2 lg:px-0">
       <div className="absolute inset-0 bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
 
       <div className="mx-auto flex w-full items-center justify-center">
@@ -14,16 +14,16 @@ export default function About() {
           <div className="animate-rotate absolute inset-0 h-full w-full rounded-full bg-[conic-gradient(#A7E629_20deg,transparent_120deg)]"></div>
           <div className="relative z-20 flex gap-4 w-full items-center rounded-[0.60rem] bg-slate-900 p-2">
             <div className="flex-col text-white p-4">
-              <div className="flex mb-10 gap-6">
+              <div className="lg:flex mb-4 md:mb-10 gap-6">
                 <div className="w-full flex items-center justify-center gap-6">
                   <div className="">
                     <BsFillQuestionOctagonFill className="" size={48} />
                   </div>
                   <div>
-                    <p className="text-semibold text-2xl text-lime-400">
+                    <p className="text-semibold  text-xl md:text-2xl text-lime-400">
                       Top Quality Questions
                     </p>
-                    <p className="relative z-50 block rounded-lg mb-3  transition duration-200 font-light">
+                    <p className="relative z-50 block text-base md:text-md rounded-lg mb-4 md:mb-0  transition duration-200 font-light">
                       All questions and solutions, designed by top exam experts,
                       based on latest patterns and actual exam level
                     </p>
@@ -34,10 +34,10 @@ export default function About() {
                     <PiExamFill className="" size={48} />
                   </div>
                   <div>
-                    <p className="text-semibold text-2xl text-lime-400">
+                    <p className="text-semibold text-xl md:text-2xl text-lime-400">
                       Live Quizzes
                     </p>
-                    <p className="relative z-50 block rounded-lg mb-3 transition duration-200 font-light">
+                    <p className="relative z-50 block rounded-lg text-base md:text-md  transition duration-200 font-light">
                       Get your All-India Rank and feel the thrill of a
                       real-exam. Groom your pressure handling and time
                       management skills.
@@ -45,16 +45,16 @@ export default function About() {
                   </div>
                 </div>
               </div>
-              <div className=" flex gap-6">
+              <div className="lg:flex gap-6">
                 <div className="w-full flex items-center justify-center gap-6">
                   <div className="">
                     <BiSolidAnalyse className="" size={48} />
                   </div>
                   <div>
-                    <p className="text-semibold text-2xl text-lime-400">
+                    <p className="text-semibold text-xl md:text-2xl text-lime-400">
                       Detailed Analysis
                     </p>
-                    <p className="relative z-50 block rounded-lg mb-3 transition duration-200 font-light">
+                    <p className="relative z-50 block rounded-lg text-base md:text-md mb-4 md:mb-0 transition duration-200 font-light">
                       Know your weaknesses, strengths and everything else that
                       you need to know to improve your score and rank.
                     </p>
@@ -65,10 +65,10 @@ export default function About() {
                     <MdVideoLibrary className="" size={48} />
                   </div>
                   <div>
-                    <p className="text-semibold text-2xl text-lime-400">
+                    <p className="text-semibold text-xl md:text-2xl text-lime-400">
                       Learning Videos
                     </p>
-                    <p className="relative z-50 block rounded-lg mb-3 transition duration-200 font-light">
+                    <p className="relative z-50 block text-base md:text-md rounded-lg mb-4 md:mb-0 transition duration-200 font-light">
                       Become lifelong learners with best teachers, engaging
                       video lessons and personalised learning journeys
                     </p>
