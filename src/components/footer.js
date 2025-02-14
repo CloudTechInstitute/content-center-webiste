@@ -4,6 +4,8 @@ import { Button } from "./ui/button";
 import { FaMapLocationDot } from "react-icons/fa6";
 import { GiRotaryPhone } from "react-icons/gi";
 import { MdEmail } from "react-icons/md";
+import Image from "next/image";
+import logo from "@/components/assets/full-logo.png";
 
 export default function FooterSection() {
   async function handleSubmit(event) {
@@ -104,15 +106,8 @@ export default function FooterSection() {
         <div className="w-full py-8">
           <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
-              <a href="https://flowbite.com/" className="flex items-center">
-                <img
-                  src="https://flowbite.com/docs/images/logo.svg"
-                  className="h-8 me-3"
-                  alt="FlowBite Logo"
-                />
-                <span className="self-center text-2xl font-semibold whitespace-nowrap ">
-                  GlobalNclexExamsCenter
-                </span>
+              <a href="#" className="flex items-center">
+                <Image className="w-64" src={logo} alt="nclex logo" />
               </a>
             </div>
             <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">

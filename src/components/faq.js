@@ -7,7 +7,10 @@ import {
 } from "@/components/ui/accordion";
 export default function Service() {
   return (
-    <div className="text-left w-full bg-lime-600 p-5 rounded-lg mt-5 mb-10 text-gray-900">
+    <div
+      className="text-left w-full bg-lime-600 p-5 rounded-lg mt-5 mb-10 text-gray-900"
+      id="faqs"
+    >
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
           <AccordionTrigger className="text-xl">
@@ -67,6 +70,15 @@ export default function Service() {
             the NCSBN test plan. This ensures your readiness assessment reflects
             the actual NCLEX exam format and knowledge required. We can boldly
             say, choosing us means you are choosing trusted results.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-6">
+          <AccordionTrigger className="text-xl">
+            Who is this course for?
+          </AccordionTrigger>
+          <AccordionContent className="text-lg">
+            This course is for registered nurses located in Africa who are
+            preparing for their NCLEX-RN exams
           </AccordionContent>
         </AccordionItem>
       </Accordion>

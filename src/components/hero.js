@@ -12,12 +12,7 @@ export default function Hero() {
   return (
     <div className="flex items-center justify-center p-5 w-full">
       <div className="">
-        <motion.p
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="text-white text-6xl text-center font-bold mb-3"
-        >
+        <p className="text-white text-6xl text-center font-bold mb-3">
           <span className="text-lg font-light">Global NCLEX Exams Center</span>
           <br></br>
           Your #1 Choice for
@@ -26,7 +21,7 @@ export default function Hero() {
             Gen NCLEX-RN
           </span>{" "}
           Test Prep
-        </motion.p>
+        </p>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -34,11 +29,11 @@ export default function Hero() {
           className="flex justify-center items-center gap-12 p-4"
         >
           <Link
-            href={"#pricing"}
+            href={"#courses"}
             onClick={(e) => {
               e.preventDefault();
               document
-                .getElementById("pricing")
+                .getElementById("courses")
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
           >
