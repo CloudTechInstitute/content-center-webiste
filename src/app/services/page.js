@@ -1,4 +1,5 @@
 "use client";
+import { Suspense, useEffect, useState } from "react";
 import { SubHero } from "@/components/subhero";
 import image from "../../../public/header.webp";
 import nurse from "../../../public/sponsorship2.webp";
@@ -27,15 +28,21 @@ import {
 } from "@/components/ui/accordion";
 import FooterSection from "@/components/footer";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
 
 export default function Service() {
-  const searchParams = useSearchParams(); // For extracting query params
-  const router = useRouter();
-  const initialTab = searchParams.get("tab") || "default"; // Get tab from URL
-  const [activeTab, setActiveTab] = useState(initialTab);
+  const [activeTab, setActiveTab] = useState("account");
   const [scrollTriggered, setScrollTriggered] = useState(false);
+
+  useEffect(() => {
+    // Get tab from URL on initial load
+    if (typeof window !== "undefined") {
+      const urlParams = new URLSearchParams(window.location.search);
+      const tabParam = urlParams.get("tab");
+      if (tabParam) {
+        setActiveTab(tabParam);
+      }
+    }
+  }, []);
 
   useEffect(() => {
     if (activeTab === "another") {
@@ -45,9 +52,17 @@ export default function Service() {
           target.scrollIntoView({ behavior: "smooth" });
           setScrollTriggered(false);
         }
-      }, 500); // Delay ensures smooth scrolling after render
+      }, 50);
     }
   }, [activeTab]);
+
+  const handleTabChange = (value) => {
+    setActiveTab(value);
+    if (typeof window !== "undefined") {
+      const newUrl = `${window.location.pathname}?tab=${value}`;
+      window.history.pushState({ tab: value }, "", newUrl);
+    }
+  };
 
   return (
     <div className="">
@@ -77,10 +92,7 @@ export default function Service() {
           defaultValue="account"
           className="px-4 w-full text-white"
           value={activeTab}
-          onValueChange={(val) => {
-            setActiveTab(val);
-            router.replace(`/services?tab=${val}`, { scroll: false });
-          }}
+          onValueChange={handleTabChange}
         >
           <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="account">Sponsorship</TabsTrigger>
@@ -128,17 +140,11 @@ export default function Service() {
                   </div>
                 </CardDescription>
               </CardHeader>
-              {/* <CardContent className="space-y-2">
-                <div className="space-y-1"></div>
-                <div className="space-y-1"></div>
-              </CardContent> */}
-              {/* <CardFooter><Button>Save changes</Button></CardFooter> */}
             </Card>
           </TabsContent>
           <TabsContent value="password">
             <Card className="bg-transparent border-none">
               <CardHeader>
-                {/* <CardTitle className="text-white">Accommodation</CardTitle> */}
                 <CardDescription className="text-white">
                   The Global NCLEX-RN Exams Center & Training School does not
                   currently offer lodging to its participants. But in the near
@@ -177,11 +183,6 @@ export default function Service() {
                   </div>
                 </CardDescription>
               </CardHeader>
-              {/* <CardContent className="space-y-2">
-                <div className="space-y-1"></div>
-                <div className="space-y-1"></div>
-              </CardContent> */}
-              {/* <CardFooter><Button>Save password</Button></CardFooter> */}
             </Card>
           </TabsContent>
           <TabsContent value="another">

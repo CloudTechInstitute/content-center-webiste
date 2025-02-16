@@ -29,11 +29,11 @@ export default function Hero() {
           className="hidden md:flex justify-center items-center gap-12 p-4"
         >
           <Link
-            href={"#courses"}
+            href={"#pricing"}
             onClick={(e) => {
               e.preventDefault();
               document
-                .getElementById("courses")
+                .getElementById("pricing")
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
           >
