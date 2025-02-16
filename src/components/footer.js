@@ -5,7 +5,7 @@ import { FaMapLocationDot } from "react-icons/fa6";
 import { GiRotaryPhone } from "react-icons/gi";
 import { MdEmail } from "react-icons/md";
 import Image from "next/image";
-import logo from "@/components/assets/full-logo.png";
+import logo from "../../public/full-logo.png";
 import { useToast } from "@/hooks/use-toast";
 
 export default function FooterSection() {
@@ -88,7 +88,8 @@ export default function FooterSection() {
                 <div className="flex gap-6 items-center mb-4">
                   <FaMapLocationDot size={36} />
                   <p>
-                    AM22 Tsui RD.GZ-103 0284 <br></br>Lekma Hospital, Ghana
+                    AM22 Tsui Bleoo RD.GZ-103 0284 <br></br>Lekma Hospital,
+                    Ghana
                   </p>
                 </div>
                 <div className="flex gap-6 items-center mb-4">

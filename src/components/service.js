@@ -7,15 +7,16 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import { Card, CardContent } from "./ui/card";
-import sideimg from "@/components/assets/exams.jpg";
-import nurse from "@/components/assets/5.jpg";
-import adult from "@/components/assets/6.png";
-import carousel1 from "@/components/assets/1.jpg";
-import carousel2 from "@/components/assets/2.jpg";
-import carousel3 from "@/components/assets/3.jpg";
-import carousel4 from "@/components/assets/4.jpg";
+import sideimg from "../../public/exams.jpg";
+import nurse from "../../public/5.jpg";
+import adult from "../../public/6.png";
+import carousel1 from "../../public/1.jpg";
+import carousel2 from "../../public/2.jpg";
+import carousel3 from "../../public/3.jpg";
+import carousel4 from "../../public/4.jpg";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const images = [
   carousel1,
@@ -28,6 +29,20 @@ const images = [
 ];
 
 export default function Services() {
+  const router = useRouter();
+
+  const handleApplyNavigation = (e) => {
+    e.preventDefault();
+    router.push("/services?tab=another");
+
+    setTimeout(() => {
+      const applySection = document.getElementById("apply");
+      if (applySection) {
+        applySection.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 500);
+  };
+
   return (
     <div className="text-center px-4 md:px-10">
       {/* Header Text */}
@@ -77,13 +92,13 @@ export default function Services() {
             This course is for registered nurses located in Africa who are
             preparing for their NCLEX-RN exams.
           </p>
-          <Link
+          {/* <Link
             href="http://pearsonvue.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button>Read more...</Button>
-          </Link>
+            <Button>Other Links</Button>
+          </Link> */}
         </div>
         <div className="relative w-full md:w-[600px] lg:w-[800px] h-56 overflow-hidden">
           <Image
@@ -116,12 +131,8 @@ export default function Services() {
             Nursing (NCSBN) for licensing nurses in the US, Canada, and recently
             in Australia.
           </p>
-          <Link
-            href="https://medexamcenter.com/blogs/neac/how-to-apply-for-nclex-exam-if-you-are-a-registered-nurse-located-in-africa"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button>Read more...</Button>
+          <Link href="/services" onClick={(e) => handleApplyNavigation(e)}>
+            <Button>Other Links</Button>
           </Link>
         </div>
       </div>
@@ -137,7 +148,7 @@ export default function Services() {
       </div>
       <div className="text-white mb-10 text-sm md:text-lg">
         Written by nurse educators and practicing nurses, our NCLEX-RN practice
-        questions include over 2,700 questions designed to challenge you and
+        questions include over 10,000 questions designed to challenge you and
         build your clinical judgment skills.
       </div>
 

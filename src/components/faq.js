@@ -13,7 +13,7 @@ export default function Service() {
     >
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
-          <AccordionTrigger className="text-lg sm:text-sm">
+          <AccordionTrigger className="text-lg sm:text-xl">
             What does Global NCLEX Exams Center do?
           </AccordionTrigger>
           <AccordionContent className="text-base sm:text-lg">

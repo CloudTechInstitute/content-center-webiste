@@ -35,12 +35,12 @@ export default function About() {
                   </div>
                   <div>
                     <p className="text-semibold text-xl md:text-2xl text-lime-400">
-                      Live Quizzes
+                      Over 10,000 prep questions
                     </p>
                     <p className="relative z-50 block rounded-lg text-base md:text-md  transition duration-200 font-light">
-                      Get your All-India Rank and feel the thrill of a
-                      real-exam. Groom your pressure handling and time
-                      management skills.
+                      Get to feel the thrill of a real-exam. Groom your pressure
+                      handling and time management skills wit our numerous
+                      carefully curated questions.
                     </p>
                   </div>
                 </div>

@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { PiSmileyFill, PiStar } from "react-icons/pi";
 import { HiArrowTrendingUp } from "react-icons/hi2";
-import hero from "@/components/assets/hero-img.png";
+import hero from "../../public/hero-img.png";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
