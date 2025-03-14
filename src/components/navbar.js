@@ -19,6 +19,7 @@ export default function Navbar() {
     { name: "FAQs", path: "/#faqs" },
     { name: "Contact", path: "/#contact" },
     { name: "Other Services", path: "/services" },
+    { name: "PearsonVue", path: "https://pearsonvue.com/" },
   ];
 
   return (
